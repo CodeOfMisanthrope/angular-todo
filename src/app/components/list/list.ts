@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {TaskDtos} from '../../data/dtos/task';
+import {TaskDto} from '../../data/dtos/task';
 import {Task} from '../task/task';
 import {UIInput} from '../ui/ui-input/ui-input.component';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -17,9 +17,9 @@ import {UiBtn} from '../ui/ui-btn/ui-btn';
   styleUrl: './list.scss',
 })
 export class List {
-  tasks: TaskDtos[] = [
-    {id: 1, name: 'Изучить Angular'},
-    {id: 2, name: 'Сделать Todo App'},
+  tasks: TaskDto[] = [
+    {id: 1, name: 'Изучить Angular', isDone: false},
+    {id: 2, name: 'Сделать Todo App', isDone: false},
   ];
 
   taskForm: FormGroup;
@@ -41,9 +41,10 @@ export class List {
 
   // Метод для добавления новой задачи (если нужно)
   addTask(name: string): void {
-    const newTask: TaskDtos = {
+    const newTask: TaskDto = {
       id: this.tasks.length + 1,
       name,
+      isDone: false
     };
     this.tasks.push(newTask);
   }

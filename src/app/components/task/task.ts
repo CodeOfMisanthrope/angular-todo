@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {TaskDtos} from '../../data/dtos/task';
+import {TaskDto} from '../../data/dtos/task';
 
 @Component({
   selector: 'app-task',
@@ -8,7 +8,7 @@ import {TaskDtos} from '../../data/dtos/task';
   styleUrl: './task.scss',
 })
 export class Task {
-  @Input() task!: TaskDtos;
+  @Input() task!: TaskDto;
 
 
   onTaskClick() {
