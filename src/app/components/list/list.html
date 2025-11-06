@@ -1,0 +1,18 @@
+<div class="task-list">
+  <h2>Список задач ({{ tasks.length }})</h2>
+
+  <!-- *ngFor - аналог v-for -->
+<!--  <app-task-->
+<!--    *ngFor="let task of tasks; trackBy: trackByTaskId"-->
+<!--    [task]="task">-->
+<!--  </app-task>-->
+
+  <!-- Альтернативный вариант с передачей данных в дочерний компонент -->
+  <div>
+    @for (task of tasks ; track task.id) {
+      <app-task [task]="task"></app-task>
+    }
+  </div>
+
+  <button (click)="addTask()">Добавить задачу</button>
+</div>
