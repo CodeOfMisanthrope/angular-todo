@@ -33,18 +33,23 @@ export class UIInput implements ControlValueAccessor {
   }
 
   // Методы ControlValueAccessor
+
+  // Angular записывает значение в компонент
   writeValue(value: string): void {
     this.value = value || '';
   }
 
+  // Регистрирует callback на изменение значения
   registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;
   }
 
+  // Регистрирует callback на "touch" событие
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
+  // Опционально: установка disabled состояния
   setDisabledState?(isDisabled: boolean): void {
     // Реализуй если нужно
   }
