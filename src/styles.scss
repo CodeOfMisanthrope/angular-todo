@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use "normalize";
+
+:root {
+  --dark-color: #000000;
+  --light-color: #FFFFFF;
+}
+
+body {
+  //background-color: var(--dark-color);
+  //color: var(--light-color);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
