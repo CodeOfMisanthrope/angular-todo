@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {TaskDtos} from '../../data/dtos/task';
 
 @Component({
   selector: 'app-task',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './task.scss',
 })
 export class Task {
+  @Input() task!: TaskDtos;
 
+
+  onTaskClick() {
+    console.log('Clicked task:', this.task.name);
+  }
 }
