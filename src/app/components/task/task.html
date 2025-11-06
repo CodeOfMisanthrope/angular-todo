@@ -1,3 +1,6 @@
 <div class="task-item" (click)="onTaskClick()">
-  <span class="task-name">{{ task.name }}</span>
+  <span class="task-item__name">{{ task.name }}</span>
+  <app-ui-btn class="task-item__ui-btn" (click)="onDeleteClick($event)">
+    Удалить
+  </app-ui-btn>
 </div>

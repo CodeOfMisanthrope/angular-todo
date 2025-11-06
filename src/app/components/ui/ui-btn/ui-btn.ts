@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-ui-btn',
@@ -7,5 +7,10 @@ import {Component, Input} from '@angular/core';
   styleUrl: './ui-btn.scss',
 })
 export class UiBtn {
-  // @Input() text!: string;
+  @Output() click = new EventEmitter<Event>();
+
+  onClick(event: Event): void {
+    event.stopPropagation(); // На всякий случай останавливаем всплытие
+    this.click.emit(event);
+  }
 }

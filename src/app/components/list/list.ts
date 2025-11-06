@@ -30,7 +30,6 @@ export class List {
     });
   }
 
-  // Обработчик для события Submit
   onSubmit() {
     const taskName = this.taskForm.get('taskName');
     if (taskName) {
@@ -39,7 +38,6 @@ export class List {
     }
   }
 
-  // Метод для добавления новой задачи (если нужно)
   addTask(name: string): void {
     const newTask: TaskDto = {
       id: this.tasks.length + 1,
@@ -49,7 +47,6 @@ export class List {
     this.tasks.push(newTask);
   }
 
-  // Метод для удаления задачи
   removeTask(taskId: number): void {
     this.tasks = this.tasks.filter(task => task.id !== taskId);
   }
