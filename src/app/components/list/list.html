@@ -1,12 +1,16 @@
 <div class="task-list">
   <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-list__header">
     <h2>Список задач ({{ tasks.length }})</h2>
-    <app-ui-input
-      formControlName="taskName"
-      placeholder="Введите задачу">
-    </app-ui-input>
-<!--    <ui-input formControlName="taskName" type="text">-->
-    <button >Добавить задачу</button>
+    <div class="task-list__content">
+      <app-ui-input
+        class="task-list__ui-input"
+        formControlName="taskName"
+        placeholder="Введите задачу">
+      </app-ui-input>
+      <!--    <ui-input formControlName="taskName" type="text">-->
+      <!--    <button >Добавить задачу</button>-->
+      <app-ui-btn>Добавить задачу</app-ui-btn>
+    </div>
   </form>
 
   @for (task of tasks; track task.id) {
