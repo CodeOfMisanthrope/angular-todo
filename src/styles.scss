@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use "normalize";
+@use "normalize.css";
+@use "fonts.css";
 
 :root {
   --dark-color: #000000;
@@ -10,6 +11,7 @@
 body {
   //background-color: var(--dark-color);
   //color: var(--light-color);
+  font-family: Roboto, sans-serif;
 }
 
 .container {
